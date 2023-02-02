@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 const User = require("./models/users");
+require('dotenv').config({path: __dirname + '/.env'})
 
 const app = express();
 
@@ -9,24 +10,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //DB config
-const db = require("./config/key").MongodbURI;
+const db = process.env.MongodbURI;
 
 //connect Mongo
 mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("DB connected"))
-  .catch((err) => console.log(err));
+    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("DB connected"))
+    .catch((err) => console.log(err));
 
 //Bodyparse`
 app.use(express.urlencoded({ extended: false }));
 
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
 });
 
 app.use("/", require("./routes/users"));
