@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/users");
-const db = process.env.MongodbURI;
 
 router.get("/", (req, res) => {
   res.send({ message: "hey im object" });

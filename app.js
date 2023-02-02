@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 const User = require("./models/users");
-require('dotenv').config({path: __dirname + '/.env'})
 
 const app = express();
 
@@ -10,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //DB config
-const db = process.env.MongodbURI;
+const db = require("./config/key").MongodbURI;
 
 //connect Mongo
 mongoose
