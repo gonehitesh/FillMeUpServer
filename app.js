@@ -30,6 +30,7 @@ app.use(function (req, res, next) {
 });
 
 app.use("/", require("./routes/users"));
+app.use("/", require("./routes/menu"));
 
 const PORT = process.env.PORT || 5000;
 
