@@ -19,6 +19,10 @@ const StoreInfoSchema = new mongoose.Schema({
   additionalInfo: {
     type: String,
   },
+  email:{
+    type: String,
+    required: true,
+  },
   date: {
     type: String,
     default: Date.now,
