@@ -21,6 +21,7 @@ router.put("/editstoreinfo", (req, res) => {
       contactNumber: req.body.contactNumber,
       address: req.body.address,
       additionalInfo: req.body.additionalInfo,
+      email: req.body.email,
     }
   )
     .then((storeInfo) => {
