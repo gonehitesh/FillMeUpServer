@@ -46,7 +46,7 @@ router.delete("/deleteitem", (req, res) => {
 });
 
 router.put("/edititem", (req, res) => {
-  Menu.updateOne({itemName: req.body.itemName}, {
+  Menu.updateOne({ _id: req.body.id }, {
       itemName: req.body.itemName,
       category:req.body.category,
       description:req.body.description,
