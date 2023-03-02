@@ -33,6 +33,8 @@ router.put("/editCoupons", (req, res) => {
       expireDate: req.body.expireDate,
       couponCode: req.body.couponCode,
       description: req.body.description,
+      offerOver: req.body.offerOver,
+      price: req.body.price,
       image: req.body.image,
     }
   )
