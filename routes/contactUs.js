@@ -13,8 +13,8 @@ router.post("/contactUS", async (req, res) => {
   });
 
   const emailBody = `<div> 
-      <p>Name: ${req.body.name}</p>
-      <p>Date of event: ${req.body.date}</p>
+      <p>Name: ${req.body.firstName} ${req.body.lastName}</p>
+      <p>Date of event: ${req.body.date !== "" ? req.body.date : "No date provided"}</p>
       <p>Email: ${req.body.email}</p>
       <p>Phone Number: ${req.body.phoneNumber}</p>
       <p>Context: ${req.body.context}</p>
@@ -24,7 +24,7 @@ router.post("/contactUS", async (req, res) => {
   const mailOptions = {
     from: "gonesathwika@gmail.com",
     to: "gonesathwika@gmail.com",
-    subject: "FillMeUp Customer Request",
+    subject: `FillMeUp Customer Request ${req.body.subject}`,
     html: emailBody,
   };
 
@@ -34,7 +34,7 @@ router.post("/contactUS", async (req, res) => {
       res.status(200).send("Email sent successfully");
     })
     .catch((error) => {
-      res.status(500).send("Server error while sending email" + err);
+      res.status(500).send("Server error while sending email" + error);
     });
 });
 
