@@ -23,6 +23,15 @@ const StoreInfoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  instagramUrl:{
+    type: String,
+  },
+  twitterUrl:{
+    type: String,
+  },
+  facebookUrl:{
+    type: String,
+  },
   date: {
     type: String,
     default: Date.now,
