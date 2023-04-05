@@ -7,8 +7,8 @@ router.post("/contactUS", async (req, res) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "@gmail.com",
-      pass: "",
+      user: "gonehitesh@gmail.com",
+      pass: "gjwlexhtdykausqw",
     },
   });
 
@@ -22,8 +22,8 @@ router.post("/contactUS", async (req, res) => {
 
 
   const mailOptions = {
-    from: "gonesathwika@gmail.com",
-    to: "gonesathwika@gmail.com",
+    from: "gonehitesh@gmail.com",
+    to: "gonehitesh@gmail.com",
     subject: `FillMeUp Customer Request ${req.body.subject}`,
     html: emailBody,
   };

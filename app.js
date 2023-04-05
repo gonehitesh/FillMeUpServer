@@ -35,6 +35,7 @@ app.use("/", require("./routes/menu"));
 app.use("/", require("./routes/storeInfo"));
 app.use("/", require("./routes/coupons"));
 app.use("/", require("./routes/contactUs"));
+app.use("/", require("./routes/analytics"));
 
 const PORT = process.env.PORT || 3002;
 
