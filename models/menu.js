@@ -8,7 +8,15 @@ const MenuSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    enum: ["appetizer", "main course", "desserts", "sides", "soft drinks"],
+    enum: [
+      "appetizer",
+      "main course",
+      "soups",
+      "breads",
+      "sides",
+      "desserts",
+      "beverages",
+    ],
     required: true,
   },
   description: {
@@ -26,7 +34,7 @@ const MenuSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  price:{
+  price: {
     type: Number,
     required: true,
   },
